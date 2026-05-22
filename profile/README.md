@@ -180,5 +180,5 @@ Individual repositories are licensed under their own terms. The primary SDK is r
 <div align="center">
 
 **Built with ❤️ by the AnoSys team — United States 🇺🇸**
-
+<img src="https://api.anosys.ai/trafficpixel/925fb3f78b04d5b9d5aded56b44410c9/a/ea8a7985c8f3/anosys.gif" width="1" height="1" alt=""/>
 </div>
