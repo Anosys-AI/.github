@@ -15,20 +15,22 @@
 
 ## What is AnoSys?
 
-AnoSys is a full-stack AI observability platform that ingests traces, metrics, logs, evals, and custom signals via **OpenTelemetry** or native SDKs — giving you a single system of record across every framework. Whether you run LangChain, CrewAI, OpenAI Agents SDK, or custom instrumentation, AnoSys normalizes everything into a unified backend. No vendor lock-in, no data silos.
+AnoSys is a full-stack AI observability platform that ingests traces, metrics, logs, evals, and custom signals through **OpenTelemetry** and native SDKs. It gives teams one system of record across LLM calls, agent runs, tools, and infrastructure—without vendor lock-in or fragmented telemetry.
+
+Add a few lines of code and every OpenAI call, OpenAI Agents run, custom function, and Claude Code session can be captured and sent to your AnoSys workspace.
 
 ## ✨ Platform Capabilities
 
 | Capability | Description |
 | :--- | :--- |
-| **Observability Platform** | Ingest traces, metrics, logs, evals, and custom signals — one system of record across every framework |
-| **Anomaly Detection** | Spot silent failures, cost spikes, latency drift, and abuse patterns in real time |
-| **Continuous Evals** | Run evals in CI and production; catch accuracy drops, safety violations, and policy drift |
-| **Custom Pipelines** | Enrich, route, and transform signals without glue code; trigger actions on anomalies or policy violations |
-| **Root Cause Analysis** | Go from "something broke" to "here's why" — causal paths across agents, models, and infrastructure |
-| **Alerting & Incidents** | Context-aware routing, auto-escalation, and ownership tracking from detection to resolution |
-| **Dashboards & KPIs** | Pre-built views for model health, agent reliability, and cost — with drill-downs for debugging |
-| **Natural Language Interface** | Ask questions in plain English, auto-generate queries, and summarize incidents |
+| **Observability Platform** | Ingest traces, metrics, logs, evals, and custom signals across models, agents, and infrastructure |
+| **Anomaly Detection** | Detect silent failures, cost spikes, latency drift, and abuse patterns in real time |
+| **Continuous Evals** | Run evaluations in CI and production to catch accuracy, safety, and policy regressions |
+| **Custom Pipelines** | Enrich, route, and transform signals; trigger actions on anomalies or policy violations |
+| **Root Cause Analysis** | Trace failures across agents, models, tools, and infrastructure to identify why they happened |
+| **Alerting & Incidents** | Route alerts with context, ownership, and escalation from detection through resolution |
+| **Dashboards & KPIs** | Monitor model health, agent reliability, latency, token usage, and cost with drill-down views |
+| **Natural Language Interface** | Ask questions in plain English, generate queries, and summarize incidents |
 
 ## 🎯 Solutions
 
@@ -47,47 +49,116 @@ AnoSys is a full-stack AI observability platform that ingests traces, metrics, l
 </tr>
 </table>
 
-## 📦 Open-Source Repositories
+## 📦 Official AnoSys SDK
 
-### [`anosys-sdk`](https://github.com/Anosys-AI/anosys-sdk) — Instrumentation SDK
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![CI](https://github.com/anosys-ai/anosys-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/anosys-ai/anosys-sdk/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
+[![Node.js](https://img.shields.io/badge/node-%E2%89%A518-green.svg)](https://nodejs.org/)
 
-The unified Python SDK for AnoSys. Ships as modular packages you can install independently:
+The [`anosys-sdk`](https://github.com/Anosys-AI/anosys-sdk) repository contains the official modular Python and JavaScript SDKs for AnoSys.
 
+### Python
+
+| Package | Version | Description | Install |
+|---------|---------|-------------|---------|
+| [`anosys-sdk-core`](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/core) | 1.0.13 | Shared config, HTTP client, decorators, and data models | `pip install anosys-sdk-core` |
+| [`anosys-sdk-openai`](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/openai) | 1.0.13 | OpenAI SDK instrumentation through OpenTelemetry | `pip install anosys-sdk-openai` |
+| [`anosys-sdk-openai-agents`](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/openai_agents) | 1.0.12 | OpenAI Agents SDK tracing processor | `pip install anosys-sdk-openai-agents` |
+| [`anosys-claude-code`](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/claude_code) | 0.2.8 | Claude Code observability hook and CLI | `pip install anosys-claude-code` |
+
+### JavaScript / Node.js
+
+| Package | Version | Description | Install |
+|---------|---------|-------------|---------|
+| [`anosys-sdk-openai`](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/js/openai) | 1.0.11 | OpenAI SDK instrumentation through OpenTelemetry | `npm install anosys-sdk-openai` |
+| [`anosys-sdk-openai-agents`](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/js/openai-agents) | 1.0.11 | OpenAI Agents SDK tracing processor | `npm install anosys-sdk-openai-agents` |
+| [`anosys-sdk-claude-code`](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/js/claude-code) | 0.2.5 | Claude Code observability hook and CLI | `npx anosys-sdk-claude-code install` |
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+1. Sign up at [anosys.ai](https://anosys.ai).
+2. Get your AnoSys API key from the [integration options page](https://console.anosys.ai/collect/integrationoptions).
+3. Export the keys required by your integration:
+
+```bash
+export ANOSYS_API_KEY="your-anosys-key"
+export OPENAI_API_KEY="your-openai-key"
 ```
-pip install anosys-sdk-core          # Core decorator & logger
-pip install anosys-sdk-openai        # OpenAI API auto-instrumentation
-pip install anosys-sdk-openai-agents # OpenAI Agents SDK integration
-```
 
-**Quick start — OpenAI integration:**
+### OpenAI — Python
+
+```bash
+pip install anosys-sdk-openai
+```
 
 ```python
 from openai import OpenAI
 from anosys_sdk_openai import AnosysOpenAILogger
 
-AnosysOpenAILogger()                       # Initialize once
+# Initialize once—subsequent OpenAI calls are captured automatically.
+AnosysOpenAILogger()
 
 client = OpenAI()
 response = client.chat.completions.create(
     model="gpt-4o-mini",
-    messages=[{"role": "user", "content": "Hello!"}]
+    messages=[{"role": "user", "content": "Hello!"}],
 )
-# Calls are automatically logged to AnoSys ✨
+print(response.choices[0].message.content)
 ```
 
-**Quick start — OpenAI Agents:**
+### OpenAI — JavaScript
 
-```python
-from agents import Agent, Runner, set_tracing_processor
-from anosys_sdk_openai_agents import AnosysOpenAIAgentsLogger
-
-set_tracing_processor(AnosysOpenAIAgentsLogger())
-
-agent = Agent(name="Assistant", instructions="You are helpful.")
-result = Runner.run_sync(agent, "Hello!")
+```bash
+npm install anosys-sdk-openai openai
 ```
 
-**Quick start — Custom function logging:**
+```js
+import { AnosysOpenAILogger } from 'anosys-sdk-openai';
+import OpenAI from 'openai';
+
+new AnosysOpenAILogger();
+
+const client = new OpenAI();
+const response = await client.chat.completions.create({
+  model: 'gpt-4o',
+  messages: [{ role: 'user', content: 'Hello!' }],
+});
+```
+
+### OpenAI Agents
+
+<table>
+<tr>
+<td><b>Python</b></td>
+<td><code>pip install anosys-sdk-openai-agents</code></td>
+</tr>
+<tr>
+<td><b>JavaScript</b></td>
+<td><code>npm install anosys-sdk-openai-agents @openai/agents</code></td>
+</tr>
+</table>
+
+See the [`anosys-sdk` quick start](https://github.com/Anosys-AI/anosys-sdk#openai-agents--python) for complete Python and JavaScript examples.
+
+### Claude Code
+
+Install the Python or JavaScript integration and run its setup wizard:
+
+```bash
+# Python
+pip install anosys-claude-code
+anosys-claude-code install
+
+# JavaScript / Node.js
+npx anosys-sdk-claude-code install
+```
+
+The installer registers a Claude Code `Stop` hook, incrementally maps new messages and subagent events, applies optional content redaction, and batches telemetry to your AnoSys workspace.
+
+### Custom Function Logging
 
 ```python
 from anosys_sdk_core import anosys_logger
@@ -97,83 +168,53 @@ def my_function(data):
     return process(data)
 ```
 
-> License: Apache 2.0
-
----
-
-### [`anosys-logger-4-openai`](https://github.com/Anosys-AI/anosys-logger-4-openai) — OpenAI Logger (Python & Node.js)
-
-Automatic observability for OpenAI API calls with zero-config instrumentation. Available for both **Python** and **Node.js**.
-
-**Key features:**
-- ✅ Zero-config instrumentation — just install and use
-- ✅ Full streaming support with chunk aggregation
-- ✅ OpenTelemetry Gen AI semantic conventions
-- ✅ Custom decorators for any function (sync or async)
-- ✅ Error tracking with full stack traces
-- ✅ Distributed tracing with trace IDs
-
----
-
-### [`anosys-logger-4-openai-agents`](https://github.com/Anosys-AI/anosys-logger-4-openai-agents) — OpenAI Agents Logger
-
-Observability integration for the OpenAI Agents SDK — trace tool calls, agent decisions, and multi-agent handoffs.
-
----
-
-### [`AnoSys-Demo-Customer`](https://github.com/Anosys-AI/AnoSys-Demo-Customer) — Demo Application
-
-A live showcase of AnoSys agentic capabilities built around a luxury real-estate experience (Elysian Estates). Demonstrates intelligent chat orchestration with `@openai/chatkit-react`, agentic workflows for complex inquiries, and context-aware AI assistants.
-
 ## 🏗️ Architecture
 
-```
-┌─────────────────┐
-│  Your App Code  │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐     ┌──────────────────┐
-│  AnoSys Logger  │────▶│  OpenTelemetry   │
-│  (Interceptor)  │     │ Instrumentation  │
-└────────┬────────┘     └──────────────────┘
-         │
-         ▼
-┌─────────────────┐
-│   OpenAI API    │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│   AnoSys API    │
-│   (Telemetry)   │
-└─────────────────┘
+```text
+┌──────────────────────────────┐
+│ Your AI application         │
+│ Models · Agents · Tools     │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ AnoSys SDKs & OpenTelemetry │
+│ Python · JavaScript · Hooks │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ AnoSys ingestion platform   │
+│ Traces · Metrics · Logs     │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│ Detection & investigation   │
+│ Evals · RCA · Alerts · KPIs │
+└──────────────────────────────┘
 ```
 
-## 🚀 Getting Started
+## 📂 More Open-Source Projects
 
-1. **Sign up** at [console.anosys.ai](https://console.anosys.ai) and grab your API key.
-2. **Install** the SDK package for your framework:
-   ```bash
-   pip install anosys-sdk-openai
-   ```
-3. **Set environment variables:**
-   ```bash
-   export ANOSYS_API_KEY="your-anosys-key"
-   export OPENAI_API_KEY="your-openai-key"
-   ```
-4. **Initialize** the logger and use your AI framework normally — calls are captured automatically.
+- [`AnoSys-Demo-Customer`](https://github.com/Anosys-AI/AnoSys-Demo-Customer) — agentic luxury real-estate demo built with ChatKit and context-aware AI assistants.
+- [`anosys-logger-4-openai`](https://github.com/Anosys-AI/anosys-logger-4-openai) — earlier standalone OpenAI logger for Python and Node.js.
+- [`anosys-logger-4-openai-agents`](https://github.com/Anosys-AI/anosys-logger-4-openai-agents) — earlier standalone OpenAI Agents SDK integration.
+
+For current integrations and releases, use the unified [`anosys-sdk`](https://github.com/Anosys-AI/anosys-sdk).
 
 ## 📚 Resources
 
 - 🌐 **Website:** [anosys.ai](https://anosys.ai)
 - 📖 **Documentation:** [docs.anosys.ai](https://docs.anosys.ai)
 - 🎮 **Console:** [console.anosys.ai](https://console.anosys.ai)
+- 🔌 **Integration options:** [console.anosys.ai/collect/integrationoptions](https://console.anosys.ai/collect/integrationoptions)
+- 💻 **SDK:** [github.com/Anosys-AI/anosys-sdk](https://github.com/Anosys-AI/anosys-sdk)
 - 📧 **Support:** [support@anosys.ai](mailto:support@anosys.ai)
 
 ## 📝 License
 
-Individual repositories are licensed under their own terms. The primary SDK is released under the **Apache 2.0** license. See each repository for details.
+Individual repositories are licensed under their own terms. The official AnoSys SDK is released under the **Apache 2.0** license.
 
 ---
 
