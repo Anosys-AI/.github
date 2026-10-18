@@ -1,6 +1,6 @@
 <div align="center">
 
-# AnoSys
+# Anosys.AI
 
 **AI Operational Intelligence for production AI systems**
 
