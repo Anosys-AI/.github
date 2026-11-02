@@ -1,14 +1,22 @@
-# Anosys.AI
-
-**AI Operational Intelligence Platform**
+# AnoSys — AI Operational Intelligence Platform
 
 [Website](https://anosys.ai) · [Documentation](https://docs.anosys.ai) · [Console](https://console.anosys.ai) · [LinkedIn](https://www.linkedin.com/company/anosys-ai/) · [X](https://x.com/AnosysAI) · [YouTube](https://www.youtube.com/@anosysai)
 
-## Understand what changes in production AI
+## Connect AI operations to business outcomes
 
-Anosys brings agent traces, evaluations, token spend, and web and product analytics into the same operational context. Teams can investigate a quality regression, trace it to a model or tool call, identify the users and workflows affected, and check whether a fix worked.
+AnoSys brings AI observability, continuous evaluation, anomaly detection, root-cause analysis, and web and product analytics into one platform. It connects the behavior of models, agents, tools, and applications with quality, reliability, cost, user experience, and business outcomes.
 
-The platform connects technical behavior with cost, user experience, and business outcomes. It supports trace timelines and trees, evaluations on production traffic, anomaly detection, root-cause analysis, dashboards, alerts, scheduled pipelines, and an AI Assistant for investigating operational data.
+Teams use AnoSys to monitor operations, evaluate performance, investigate failures, manage spend, and measure the impact of their AI systems. Engineers, product teams, and business operators work from the same operational context, from an individual model call to the workflow and customer journey it supports.
+
+## From telemetry to operational decisions
+
+- **Observe AI systems end to end.** Explore model calls, agent runs, tool activity, errors, latency, token usage, and estimated cost through trace timelines and trees.
+- **Evaluate quality and reliability.** Run evaluations on production traffic and detect anomalies in behavior, performance, and spend.
+- **Investigate causes and impact.** Connect technical failures with affected users and workflows, and use the AI Assistant to explore operational data in natural language.
+- **Connect AI performance with product and business performance.** Bring web and product analytics alongside AI telemetry to understand user experience and business outcomes.
+- **Put insights to work.** Use dashboards, alerts, and scheduled data pipelines to monitor priorities, surface issues, and verify whether changes deliver the intended results.
+
+The SDKs in this organization provide the instrumentation layer. The AnoSys platform brings those signals together with evaluations and application data to support operational decisions across teams.
 
 ## Connect your applications and agents
 
@@ -47,7 +55,7 @@ pip install anosys-sdk-anthropic
 npm install anosys-sdk-anthropic @anthropic-ai/sdk
 ```
 
-For agent workflows, use the Claude Agent SDK or OpenAI Agents SDK integration. For developer-tool activity, use the Claude Code or Codex CLI integration. The [SDK README](https://github.com/Anosys-AI/anosys-sdk#readme) links to examples and complete setup instructions.
+For agent workflows, use the Claude Agent SDK or OpenAI Agents SDK integration. For developer-tool activity, use the Claude Code, Codex CLI, or Antigravity integration. The [SDK README](https://github.com/Anosys-AI/anosys-sdk#readme) links to examples and complete setup instructions.
 
 ## Control sensitive telemetry
 
