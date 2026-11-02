@@ -22,11 +22,12 @@ The official [AnoSys SDK](https://github.com/Anosys-AI/anosys-sdk) provides modu
 | Claude Agent SDK | [anosys-sdk-claude-agents](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/claude_agents) | [anosys-sdk-claude-agents](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/js/claude-agents) |
 | Claude Code | [anosys-claude-code](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/claude_code) | [anosys-sdk-claude-code](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/js/claude-code) |
 | Codex CLI | [anosys-codex](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/codex) | [anosys-sdk-codex](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/js/codex) |
+| Antigravity | [anosys-antigravity](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/antigravity) | [anosys-sdk-antigravity](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/js/antigravity) |
 | Custom Python logging | [anosys-sdk-core](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/core) | Decorators are included in the API integrations |
 
 See the [SDK package list](https://github.com/Anosys-AI/anosys-sdk#published-packages) for current versions, requirements, and installation commands.
 
-**Antigravity is available for development testing from source.** Its Python and JavaScript implementations are on a separate branch and are not published to npm or PyPI. They collect agent activity, tool calls, commands, files, and duration; token counts and cost are unavailable. Read the [Antigravity development guide](https://github.com/Anosys-AI/anosys-sdk/blob/main/ANTIGRAVITY.md).
+Antigravity collects agent activity, tool calls, commands, files, and duration. Its hook inputs and transcripts do not expose token counters or cost. Read the [Antigravity setup guide](https://github.com/Anosys-AI/anosys-sdk/blob/main/ANTIGRAVITY.md) for global and workspace installation, content redaction, and diagnostics.
 
 You can also send data through OpenTelemetry OTLP/HTTP, the OpenTelemetry Collector, REST APIs, JavaScript tracking, image pixels, and file ingestion. SDK instrumentation and coding-tool hooks use different endpoint types; the [integration options page](https://console.anosys.ai/collect/integrationoptions) provides the appropriate keys.
 
@@ -50,7 +51,7 @@ For agent workflows, use the Claude Agent SDK or OpenAI Agents SDK integration. 
 
 ## Control sensitive telemetry
 
-Released SDKs support opt-in encryption of selected string fields before transmission. Anthropic and Claude Agents integrations offer content-capture controls; coding-tool hooks offer content redaction. These controls have different scopes and do not guarantee that every field in a payload is encrypted or masked.
+The OpenAI, Anthropic, Claude Agents, Claude Code, and Codex integrations support opt-in encryption of selected string fields before transmission. Anthropic and Claude Agents integrations offer content-capture controls; coding-tool hooks offer content redaction. Antigravity 0.1.0 supports redaction but does not implement field encryption. These controls have different scopes and do not guarantee that every field in a payload is encrypted or masked.
 
 Encryption uses the SDK's existing AES-256-CBC compatibility format. Decryption settings in the browser are configured separately. Read the [SDK content-controls reference](https://github.com/Anosys-AI/anosys-sdk/blob/main/DATA_CONTROLS.md) before collecting sensitive data.
 
