@@ -1,12 +1,12 @@
-# AnoSys — AI Operational Intelligence Platform
+# Anosys.ai — AI Operational Intelligence Platform
 
 [Website](https://anosys.ai) · [Documentation](https://docs.anosys.ai) · [Console](https://console.anosys.ai) · [LinkedIn](https://www.linkedin.com/company/anosys-ai/) · [X](https://x.com/AnosysAI) · [YouTube](https://www.youtube.com/@anosysai)
 
 ## Connect AI operations to business outcomes
 
-AnoSys brings AI observability, continuous evaluation, anomaly detection, root-cause analysis, and web and product analytics into one platform. It connects the behavior of models, agents, tools, and applications with quality, reliability, cost, user experience, and business outcomes.
+Anosys.ai brings AI observability, continuous evaluation, anomaly detection, root-cause analysis, and web and product analytics into one platform. It connects the behavior of models, agents, tools, and applications with quality, reliability, cost, user experience, and business outcomes.
 
-Teams use AnoSys to monitor operations, evaluate performance, investigate failures, manage spend, and measure the impact of their AI systems. Engineers, product teams, and business operators work from the same operational context, from an individual model call to the workflow and customer journey it supports.
+Teams use Anosys.ai to monitor operations, evaluate performance, investigate failures, manage spend, and measure the impact of their AI systems. Engineers, product teams, and business operators work from the same operational context, from an individual model call to the workflow and customer journey it supports.
 
 ## From telemetry to operational decisions
 
@@ -16,11 +16,11 @@ Teams use AnoSys to monitor operations, evaluate performance, investigate failur
 - **Connect AI performance with product and business performance.** Bring web and product analytics alongside AI telemetry to understand user experience and business outcomes.
 - **Put insights to work.** Use dashboards, alerts, and scheduled data pipelines to monitor priorities, surface issues, and verify whether changes deliver the intended results.
 
-The SDKs in this organization provide the instrumentation layer. The AnoSys platform brings those signals together with evaluations and application data to support operational decisions across teams.
+The SDKs in this organization provide the instrumentation layer. The Anosys.ai platform brings those signals together with evaluations and application data to support operational decisions across teams.
 
 ## Connect your applications and agents
 
-The official [AnoSys SDK](https://github.com/Anosys-AI/anosys-sdk) provides modular Python and JavaScript integrations.
+The official [Anosys.ai SDK](https://github.com/Anosys-AI/anosys-sdk) provides modular Python and JavaScript integrations.
 
 | Integration | Python package | JavaScript package |
 | --- | --- | --- |
@@ -41,7 +41,7 @@ You can also send data through OpenTelemetry OTLP/HTTP, the OpenTelemetry Collec
 
 ## Get started
 
-1. Create an account at [anosys.ai](https://anosys.ai).
+1. Create an account at [Anosys.ai](https://anosys.ai).
 2. Create an endpoint and get its key from [integration options](https://console.anosys.ai/collect/integrationoptions).
 3. Install the package for your application or coding tool and follow its setup guide.
 
@@ -66,7 +66,7 @@ Encryption uses the SDK's existing AES-256-CBC compatibility format. Decryption 
 ## Open-source repositories
 
 - [anosys-sdk](https://github.com/Anosys-AI/anosys-sdk): current Python and JavaScript integrations, examples, and telemetry references.
-- [AnoSys-Demo-Customer](https://github.com/Anosys-AI/AnoSys-Demo-Customer): an agentic real-estate application demonstrating AnoSys in a working product.
+- [Demo application](https://github.com/Anosys-AI/AnoSys-Demo-Customer): an agentic real-estate application demonstrating Anosys.ai in a working product.
 - [anosys-logger-4-openai](https://github.com/Anosys-AI/anosys-logger-4-openai) and [anosys-logger-4-openai-agents](https://github.com/Anosys-AI/anosys-logger-4-openai-agents): earlier standalone integrations. Use anosys-sdk for new work.
 
 ## Resources
