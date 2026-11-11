@@ -31,11 +31,11 @@ The official [Anosys.ai SDK](https://github.com/Anosys-AI/anosys-sdk) provides m
 | Claude Code | [anosys-claude-code](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/claude_code) | [anosys-sdk-claude-code](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/js/claude-code) |
 | Codex CLI | [anosys-codex](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/codex) | [anosys-sdk-codex](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/js/codex) |
 | Antigravity | [anosys-antigravity](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/antigravity) | [anosys-sdk-antigravity](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/js/antigravity) |
-| Custom Python logging | [anosys-sdk-core](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/core) | Decorators are included in the API integrations |
+| Core and custom logging | [anosys-sdk-core](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/core) | [anosys-sdk-core](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/js/core) |
 
 See the [SDK package list](https://github.com/Anosys-AI/anosys-sdk#published-packages) for current versions, requirements, and installation commands.
 
-Antigravity collects agent activity, tool calls, commands, files, and duration. Its hook inputs and transcripts do not expose token counters or cost. Read the [Antigravity setup guide](https://github.com/Anosys-AI/anosys-sdk/blob/main/ANTIGRAVITY.md) for global and workspace installation, content redaction, and diagnostics.
+Antigravity collects agent activity, tool calls, commands, files, and duration. Its hook inputs and transcripts do not expose token counters or cost. Read the [Antigravity setup guide](https://github.com/Anosys-AI/anosys-sdk/blob/main/ANTIGRAVITY.md) for global and workspace installation, collection levels, and diagnostics.
 
 You can also send data through OpenTelemetry OTLP/HTTP, the OpenTelemetry Collector, REST APIs, JavaScript tracking, image pixels, and file ingestion. SDK instrumentation and coding-tool hooks use different endpoint types; the [integration options page](https://console.anosys.ai/collect/integrationoptions) provides the appropriate keys.
 
@@ -59,9 +59,9 @@ For agent workflows, use the Claude Agent SDK or OpenAI Agents SDK integration. 
 
 ## Control sensitive telemetry
 
-The OpenAI, Anthropic, Claude Agents, Claude Code, and Codex integrations support opt-in encryption of selected string fields before transmission. Anthropic and Claude Agents integrations offer content-capture controls; coding-tool hooks offer content redaction. Antigravity 0.1.0 supports redaction but does not implement field encryption. These controls have different scopes and do not guarantee that every field in a payload is encrypted or masked.
+All integrations share collection levels: `off`, `metadata`, and `full`. Coding-tool hooks default to metadata only; collecting full content requires each user to accept the data collection policy. Application SDKs default to full collection, with developer controls to reduce or disable it. Project settings can lower collection but cannot override a user's more restrictive choice.
 
-Encryption uses the SDK's existing AES-256-CBC compatibility format. Decryption settings in the browser are configured separately. Read the [SDK content-controls reference](https://github.com/Anosys-AI/anosys-sdk/blob/main/DATA_CONTROLS.md) before collecting sensitive data.
+Every integration, including Antigravity, supports opt-in client-side encryption before transmission. The `enc2` format uses PBKDF2-SHA256 and deterministic AES-256-GCM with a workspace salt; metadata remains readable, and deterministic ciphertext allows grouping and joins while revealing equality between values. Browser decryption must support the same format, passphrase, and salt. Read the [SDK content-controls reference](https://github.com/Anosys-AI/anosys-sdk/blob/main/DATA_CONTROLS.md) and [upgrade notes](https://github.com/Anosys-AI/anosys-sdk/blob/main/RELEASE_NOTES.md) before rollout.
 
 ## Open-source repositories
 
