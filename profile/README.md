@@ -10,33 +10,47 @@
 <p align="center"><b>The AI Operational Intelligence Platform</b></p>
 
 <p align="center">
-  <a href="https://anosys.ai">Website</a> · <a href="https://docs.anosys.ai">Documentation</a> · <a href="https://console.anosys.ai">Console</a> · <a href="https://github.com/Anosys-AI/anosys-sdk">SDK</a> · <a href="https://www.linkedin.com/company/anosys-ai/">LinkedIn</a> · <a href="https://x.com/AnosysAI">X</a> · <a href="https://www.youtube.com/@anosysai">YouTube</a>
+  <a href="https://anosys.ai">Website</a> · <a href="https://anosys.ai/docs/">Documentation</a> · <a href="https://console.anosys.ai">Console</a> · <a href="https://github.com/Anosys-AI/anosys-sdk">SDK</a> · <a href="https://www.linkedin.com/company/anosys-ai/">LinkedIn</a> · <a href="https://x.com/AnosysAI">X</a> · <a href="https://www.youtube.com/@anosysai">YouTube</a>
 </p>
 
-Anosys.ai shows you what your AI is doing and what it costs. One platform for AI observability, evaluations, anomaly detection, root-cause analysis and product analytics, connected to the outcomes your business cares about.
+<p align="center">
+  <a href="https://anosys.ai/assets/img/console/trace-tree.webp"><img src="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/screenshots/trace-tree.webp" alt="Agent trace tree: agents, model calls, tool calls and handoffs" width="32%"></a>
+  <a href="https://anosys.ai/assets/img/console/trace-timeline-agents.webp"><img src="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/screenshots/trace-timeline-agents.webp" alt="Agent trace timeline with the duration of each step" width="32%"></a>
+  <a href="https://anosys.ai/assets/img/console/web-analytics-dashboard.webp"><img src="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/screenshots/web-analytics-dashboard.webp" alt="Website analytics dashboard" width="32%"></a>
+</p>
+<p align="center"><sub>Agent trace tree · Trace timeline · Website analytics. Click to enlarge.</sub></p>
 
-- **See every model call and agent run**, with tool calls, errors, latency, tokens and cost.
-- **Catch problems early** with evaluations on live traffic and anomaly alerts on quality, performance and spend.
-- **Find the cause fast**: trace a failure from the model call to the users and workflows it affected, or ask the AI Assistant in plain language.
-- **Measure impact**: put AI performance next to web and product analytics, on dashboards your whole team uses.
+## Why Anosys.ai
+
+AI systems rarely fail loudly. A request succeeds while the answer is wrong. An agent retries, loops and calls the same tool again, and the bill grows while the task stays unsolved. When something goes wrong, nobody can say why the agent did what it did. Your monitoring shows healthy services; your customers see failures.
+
+Anosys.ai connects what your AI does with what it costs and what it means for your users and your business, so you can find what changed, fix it and prove the fix worked.
+
+**How it works:** **ingest** AI traces, application data, user activity, costs and evaluations from any source → **correlate** them into one shared context → **explain** what changed and why → **act** with alerts, evaluations and automated pipelines → **improve**, and measure again.
+
+## What you can do
+
+- **Debug AI agents.** See every run as a trace tree: model calls, tool calls, handoffs, outputs, tokens and errors in order. The RCA report and the AI Assistant help you get from a bad run to its root cause. [Agent tracing](https://anosys.ai/docs/agent-tracing/)
+- **Evaluate quality.** Score what your AI actually produced, not just whether it errored. Run evaluation templates on live traffic or on datasets, compare prompts and models with experiments, and keep automated judges honest with human review. [Evaluations](https://anosys.ai/docs/evals/)
+- **Catch silent regressions.** Detect changes in behavior, quality, latency and spend even when nothing throws an error, and get alerted in Slack, email or a webhook with rules or AI-evaluated conditions. [Alerts](https://anosys.ai/docs/alerts/)
+- **Understand AI spend.** Tokens, cache use and estimated cost by model, person, project and workflow, for your own apps and for coding tools like Claude Code, Codex and Antigravity. See what the spend produces, not just what it costs. [AI and coding spend](https://anosys.ai/docs/cost-intelligence/)
+- **Optimize your agents in a feedback loop.** Turn what you find into improvements: spot wasted tokens, retry loops and expensive models, test a fix by comparing prompts or models in an experiment, then confirm on live traffic that quality went up and cost went down. Every change feeds back into the next round of monitoring and evaluation. [Evaluations and experiments](https://anosys.ai/docs/evals/)
+- **Connect AI to users and outcomes.** Website and product analytics and business process monitoring sit next to your AI traces, joined by your own user and session IDs. [Product analytics](https://anosys.ai/docs/product-analytics/) · [Business processes](https://anosys.ai/docs/business-process-monitoring/)
+- **Make it yours.** Start from dashboard templates or Auto-Insights, or build your own. Turn queries into reusable process units, and chain processing, evaluations and alerts into scheduled pipelines. [Dashboards](https://anosys.ai/docs/custom-dashboards/) · [Pipelines](https://anosys.ai/docs/custom-pipelines/)
+- **Ask in plain language.** The AI Assistant answers questions about your data, such as "why did Claude Code spend go up yesterday?", and builds dashboard widgets for you. [AI Assistant](https://anosys.ai/docs/ai-assistant/)
 
 ## Get started
 
-1. Create an account at [anosys.ai](https://anosys.ai) and get a key from [Integration options](https://console.anosys.ai/collect/integrationoptions).
-2. Install the integration for your stack and add one line:
+Create a free account in the [Console](https://console.anosys.ai) and get a key from [Integration options](https://console.anosys.ai/collect/integrationoptions). Then pick your starting point:
 
-   ```bash
-   pip install anosys-sdk-openai      # or: npm install anosys-sdk-openai openai
-   ```
+| Start here | What you get | Set up |
+| --- | --- | --- |
+| **Monitor LLM calls** in your app | Every OpenAI or Anthropic call with prompt, response, latency, tokens and cost | `pip install anosys-sdk-openai openai` or `pip install anosys-sdk-anthropic anthropic`, then `AnosysOpenAILogger()` or `AnosysAnthropicLogger()` at startup |
+| **Debug AI agents** | Every run of the OpenAI Agents SDK or Claude Agent SDK as a trace of model calls, tool calls and handoffs | `pip install anosys-sdk-openai-agents` or `pip install anosys-sdk-claude-agents`, then one line at startup |
+| **Track coding-assistant spend** | Tokens and cost of Claude Code, Codex and Antigravity by developer, project and model | `pip install anosys-claude-code && anosys-claude-code install` (likewise `anosys-codex`, `anosys-antigravity`) |
+| **Website and product analytics** | Visitors, sessions, sources, clicks and Web Vitals, and signed-in users across sessions | One `<script>` tag in your site's footer |
 
-   ```python
-   from anosys_sdk_openai import AnosysOpenAILogger
-   AnosysOpenAILogger()  # every OpenAI call from here on is traced
-   ```
-
-3. Open the [Console](https://console.anosys.ai) to see your traces.
-
-The [SDK quickstart](https://github.com/Anosys-AI/anosys-sdk#quickstart) has the full example in Python and JavaScript.
+Every SDK is also available for JavaScript (`npm install anosys-sdk-openai openai` and so on). The [SDK guide](https://github.com/Anosys-AI/anosys-sdk#get-started) has copy-paste examples for each path, and the [documentation](https://anosys.ai/docs/getting-started/) covers website analytics and sending any other data.
 
 ## Integrations
 
@@ -57,15 +71,13 @@ Every integration is available for Python and JavaScript. Not using these? Send 
 - **You choose what is sent:** `off`, `metadata` (ids, timing, models, tokens and cost) or `full` (prompts and responses too).
 - **Coding tools send metadata only** until each user opts in to full collection and accepts the [data collection policy](https://github.com/Anosys-AI/anosys-sdk/blob/main/PRIVACY.md).
 - **Projects can lower collection, never raise it**, and nothing overrides a user's choice to turn it down.
-- **Optional client-side encryption** of all content before it leaves your machine.
+- **Optional encryption with your own key** of all content before it leaves your machine, plus redaction and alerts on sensitive data.
 
-Read more in [content controls](https://github.com/Anosys-AI/anosys-sdk/blob/main/DATA_CONTROLS.md).
+Read more in [security and data controls](https://anosys.ai/docs/data-encryption/) and the SDK's [content controls](https://github.com/Anosys-AI/anosys-sdk/blob/main/DATA_CONTROLS.md).
 
 ## Repositories
 
 - [anosys-sdk](https://github.com/Anosys-AI/anosys-sdk): Python and JavaScript integrations, example notebooks and reference docs.
-- [AnoSys-Demo-Customer](https://github.com/Anosys-AI/AnoSys-Demo-Customer): an agentic real-estate app that shows Anosys.ai in a working product.
-- [anosys-logger-4-openai](https://github.com/Anosys-AI/anosys-logger-4-openai) and [anosys-logger-4-openai-agents](https://github.com/Anosys-AI/anosys-logger-4-openai-agents): earlier standalone loggers, replaced by anosys-sdk. Use anosys-sdk for new work.
 
 Questions? Email [support@anosys.ai](mailto:support@anosys.ai). The SDK is licensed under [Apache 2.0](https://github.com/Anosys-AI/anosys-sdk/blob/main/LICENSE).
 
