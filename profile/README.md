@@ -64,7 +64,7 @@ Every SDK is also available for JavaScript (`npm install anosys-sdk-openai opena
 | <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/claude-dark.svg"><img src="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/claude-light.svg" width="16" height="16" alt=""></picture> [Claude Agent SDK](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/claude_agents) | Agent runs and delegation, tool calls, finding the step that failed |
 | <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/claude-dark.svg"><img src="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/claude-light.svg" width="16" height="16" alt=""></picture> [Claude Code](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/claude_code) | Token and cost tracking per developer, project and session; expensive sessions and models |
 | <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/openai-dark.svg"><img src="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/openai-light.svg" width="16" height="16" alt=""></picture> [Codex CLI](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/codex) | Token and cost tracking per developer, project and session; expensive sessions and models |
-| <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/google-dark.svg"><img src="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/google-light.svg" width="16" height="16" alt=""></picture> [Antigravity](https://github.com/Anosys-AI/anosys-sdk/blob/main/ANTIGRAVITY.md) | Agent activity, tool calls and commands, session time |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/google-dark.svg"><img src="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/google-light.svg" width="16" height="16" alt=""></picture> [Antigravity](https://github.com/Anosys-AI/anosys-sdk/blob/main/docs/ANTIGRAVITY.md) | Agent activity, tool calls and commands, session time |
 
 Every integration is available for Python and JavaScript. Not using these? Send data with OpenTelemetry (OTLP/HTTP or the Collector), the REST API, JavaScript tracking, image pixels or file upload; [Integration options](https://console.anosys.ai/collect/integrationoptions) gives you the key for each.
 
@@ -75,7 +75,7 @@ Every integration is available for Python and JavaScript. Not using these? Send 
 - **Projects can lower collection, never raise it**, and nothing overrides a user's choice to turn it down.
 - **Optional encryption with your own key** of all content before it leaves your machine, plus redaction and alerts on sensitive data.
 
-Read more in [security and data controls](https://anosys.ai/docs/data-encryption/) and the SDK's [content controls](https://github.com/Anosys-AI/anosys-sdk/blob/main/DATA_CONTROLS.md).
+Read more in [security and data controls](https://anosys.ai/docs/data-encryption/) and the SDK's [content controls](https://github.com/Anosys-AI/anosys-sdk/blob/main/docs/DATA_CONTROLS.md).
 
 ## Repositories
 
