@@ -9,6 +9,8 @@
 
 <p align="center"><b>The AI Operational Intelligence Platform</b></p>
 
+<p align="center">Monitor, debug, rootcause of and optimize your AI applications end to end.</p>
+
 <p align="center">
   <a href="https://anosys.ai">Website</a> · <a href="https://anosys.ai/docs/">Documentation</a> · <a href="https://console.anosys.ai">Console</a> · <a href="https://github.com/Anosys-AI/anosys-sdk">SDK</a> · <a href="https://www.linkedin.com/company/anosys-ai/">LinkedIn</a> · <a href="https://x.com/AnosysAI">X</a> · <a href="https://www.youtube.com/@anosysai">YouTube</a>
 </p>
