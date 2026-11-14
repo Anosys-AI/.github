@@ -1,18 +1,23 @@
 <p align="center">
   <a href="https://anosys.ai">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/anosys-new-white-darkmode.svg">
-      <img src="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/anosys-new-black-lightmode.svg" alt="Anosys.ai" width="360">
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/anosys-banner-dark.png">
+      <img src="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/anosys-banner.png" alt="Anosys.ai: understand, monitor and optimize agentic AI end to end" width="100%">
     </picture>
   </a>
 </p>
 
-<p align="center"><b>The AI Operational Intelligence Platform</b></p>
-
-<p align="center">Monitor, debug, rootcause of and optimize your AI applications end to end.</p>
+<p align="center">
+  <a href="https://anosys.ai">Website</a> · <a href="https://anosys.ai/docs/">Documentation</a> · <a href="https://console.anosys.ai">Console</a> · <a href="https://github.com/Anosys-AI/anosys-sdk">SDK</a> · <a href="https://www.linkedin.com/company/anosys-ai/">LinkedIn</a> · <a href="https://x.com/AnosysAI">X</a> · <a href="https://www.youtube.com/@anosysai">YouTube</a> · <a href="https://discord.gg/JhcCfgvmaQ">Discord</a>
+</p>
 
 <p align="center">
-  <a href="https://anosys.ai">Website</a> · <a href="https://anosys.ai/docs/">Documentation</a> · <a href="https://console.anosys.ai">Console</a> · <a href="https://github.com/Anosys-AI/anosys-sdk">SDK</a> · <a href="https://www.linkedin.com/company/anosys-ai/">LinkedIn</a> · <a href="https://x.com/AnosysAI">X</a> · <a href="https://www.youtube.com/@anosysai">YouTube</a>
+  <a href="https://github.com/Anosys-AI/anosys-sdk"><img src="https://img.shields.io/badge/Star_on_GitHub-%E2%98%85-111111?logo=github&logoColor=white" alt="Star on GitHub"></a>
+  <a href="https://discord.gg/JhcCfgvmaQ"><img src="https://img.shields.io/badge/Discord-Join_us-5865F2?logo=discord&logoColor=white" alt="Join our Discord"></a>
+</p>
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=GUwJ9sK9gD4"><img src="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/anosys-demo-video.png" alt="Watch the Anosys.ai demo on YouTube" width="720"></a>
 </p>
 
 <p align="center">
@@ -81,7 +86,7 @@ Read more in [security and data controls](https://anosys.ai/docs/data-encryption
 
 - [anosys-sdk](https://github.com/Anosys-AI/anosys-sdk): Python and JavaScript integrations, example notebooks and reference docs.
 
-⭐ **Star [anosys-sdk](https://github.com/Anosys-AI/anosys-sdk)** to follow new integrations, [subscribe to the newsletter](https://anosys.ai/newsletter.html) for product updates, and follow us on [LinkedIn](https://www.linkedin.com/company/anosys-ai/) and [X](https://x.com/AnosysAI).
+⭐ **Star [anosys-sdk](https://github.com/Anosys-AI/anosys-sdk)** to follow new integrations, [subscribe to the newsletter](https://anosys.ai/newsletter.html) for product updates, and join us on [Discord](https://discord.gg/JhcCfgvmaQ), and follow us on [LinkedIn](https://www.linkedin.com/company/anosys-ai/) and [X](https://x.com/AnosysAI).
 
 Questions? Email [support@anosys.ai](mailto:support@anosys.ai). The SDK is licensed under [Apache 2.0](https://github.com/Anosys-AI/anosys-sdk/blob/main/LICENSE).
 
