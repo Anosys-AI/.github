@@ -81,6 +81,8 @@ Read more in [security and data controls](https://anosys.ai/docs/data-encryption
 
 - [anosys-sdk](https://github.com/Anosys-AI/anosys-sdk): Python and JavaScript integrations, example notebooks and reference docs.
 
+⭐ **Star [anosys-sdk](https://github.com/Anosys-AI/anosys-sdk)** to follow new integrations, [subscribe to the newsletter](https://anosys.ai/newsletter.html) for product updates, and follow us on [LinkedIn](https://www.linkedin.com/company/anosys-ai/) and [X](https://x.com/AnosysAI).
+
 Questions? Email [support@anosys.ai](mailto:support@anosys.ai). The SDK is licensed under [Apache 2.0](https://github.com/Anosys-AI/anosys-sdk/blob/main/LICENSE).
 
 <img src="https://api.anosys.ai/trafficpixel/925fb3f78b04d5b9d5aded56b44410c9/a/ea8a7985c8f3/anosys.gif?cvs198=https://github.com/Anosys-AI" width="1" height="1" alt=""/>
