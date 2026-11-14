@@ -1,78 +1,72 @@
-# Anosys.ai — AI Operational Intelligence Platform
+<p align="center">
+  <a href="https://anosys.ai">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/anosys-new-white-darkmode.svg">
+      <img src="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/anosys-new-black-lightmode.svg" alt="Anosys.ai" width="360">
+    </picture>
+  </a>
+</p>
 
-[Website](https://anosys.ai) · [Documentation](https://docs.anosys.ai) · [Console](https://console.anosys.ai) · [LinkedIn](https://www.linkedin.com/company/anosys-ai/) · [X](https://x.com/AnosysAI) · [YouTube](https://www.youtube.com/@anosysai)
+<p align="center"><b>The AI Operational Intelligence Platform</b></p>
 
-## Connect AI operations to business outcomes
+<p align="center">
+  <a href="https://anosys.ai">Website</a> · <a href="https://docs.anosys.ai">Documentation</a> · <a href="https://console.anosys.ai">Console</a> · <a href="https://github.com/Anosys-AI/anosys-sdk">SDK</a> · <a href="https://www.linkedin.com/company/anosys-ai/">LinkedIn</a> · <a href="https://x.com/AnosysAI">X</a> · <a href="https://www.youtube.com/@anosysai">YouTube</a>
+</p>
 
-Anosys.ai brings AI observability, continuous evaluation, anomaly detection, root-cause analysis, and web and product analytics into one platform. It connects the behavior of models, agents, tools, and applications with quality, reliability, cost, user experience, and business outcomes.
+Anosys.ai shows you what your AI is doing and what it costs. One platform for AI observability, evaluations, anomaly detection, root-cause analysis and product analytics, connected to the outcomes your business cares about.
 
-Teams use Anosys.ai to monitor operations, evaluate performance, investigate failures, manage spend, and measure the impact of their AI systems. Engineers, product teams, and business operators work from the same operational context, from an individual model call to the workflow and customer journey it supports.
-
-## From telemetry to operational decisions
-
-- **Observe AI systems end to end.** Explore model calls, agent runs, tool activity, errors, latency, token usage, and estimated cost through trace timelines and trees.
-- **Evaluate quality and reliability.** Run evaluations on production traffic and detect anomalies in behavior, performance, and spend.
-- **Investigate causes and impact.** Connect technical failures with affected users and workflows, and use the AI Assistant to explore operational data in natural language.
-- **Connect AI performance with product and business performance.** Bring web and product analytics alongside AI telemetry to understand user experience and business outcomes.
-- **Put insights to work.** Use dashboards, alerts, and scheduled data pipelines to monitor priorities, surface issues, and verify whether changes deliver the intended results.
-
-The SDKs in this organization provide the instrumentation layer. The Anosys.ai platform brings those signals together with evaluations and application data to support operational decisions across teams.
-
-## Connect your applications and agents
-
-The official [Anosys.ai SDK](https://github.com/Anosys-AI/anosys-sdk) provides modular Python and JavaScript integrations.
-
-| Integration | Python package | JavaScript package |
-| --- | --- | --- |
-| OpenAI API | [anosys-sdk-openai](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/openai) | [anosys-sdk-openai](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/js/openai) |
-| OpenAI Agents SDK | [anosys-sdk-openai-agents](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/openai_agents) | [anosys-sdk-openai-agents](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/js/openai-agents) |
-| Anthropic API | [anosys-sdk-anthropic](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/anthropic) | [anosys-sdk-anthropic](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/js/anthropic) |
-| Claude Agent SDK | [anosys-sdk-claude-agents](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/claude_agents) | [anosys-sdk-claude-agents](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/js/claude-agents) |
-| Claude Code | [anosys-claude-code](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/claude_code) | [anosys-sdk-claude-code](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/js/claude-code) |
-| Codex CLI | [anosys-codex](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/codex) | [anosys-sdk-codex](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/js/codex) |
-| Antigravity | [anosys-antigravity](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/antigravity) | [anosys-sdk-antigravity](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/js/antigravity) |
-| Core and custom logging | [anosys-sdk-core](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/core) | [anosys-sdk-core](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/js/core) |
-
-See the [SDK package list](https://github.com/Anosys-AI/anosys-sdk#published-packages) for current versions, requirements, and installation commands.
-
-Antigravity collects agent activity, tool calls, commands, files, and duration. Its hook inputs and transcripts do not expose token counters or cost. Read the [Antigravity setup guide](https://github.com/Anosys-AI/anosys-sdk/blob/main/ANTIGRAVITY.md) for global and workspace installation, collection levels, and diagnostics.
-
-You can also send data through OpenTelemetry OTLP/HTTP, the OpenTelemetry Collector, REST APIs, JavaScript tracking, image pixels, and file ingestion. SDK instrumentation and coding-tool hooks use different endpoint types; the [integration options page](https://console.anosys.ai/collect/integrationoptions) provides the appropriate keys.
+- **See every model call and agent run**, with tool calls, errors, latency, tokens and cost.
+- **Catch problems early** with evaluations on live traffic and anomaly alerts on quality, performance and spend.
+- **Find the cause fast**: trace a failure from the model call to the users and workflows it affected, or ask the AI Assistant in plain language.
+- **Measure impact**: put AI performance next to web and product analytics, on dashboards your whole team uses.
 
 ## Get started
 
-1. Create an account at [Anosys.ai](https://anosys.ai).
-2. Create an endpoint and get its key from [integration options](https://console.anosys.ai/collect/integrationoptions).
-3. Install the package for your application or coding tool and follow its setup guide.
+1. Create an account at [anosys.ai](https://anosys.ai) and get a key from [Integration options](https://console.anosys.ai/collect/integrationoptions).
+2. Install the integration for your stack and add one line:
 
-For example, install Anthropic API instrumentation:
+   ```bash
+   pip install anosys-sdk-openai      # or: npm install anosys-sdk-openai openai
+   ```
 
-```bash
-# Python
-pip install anosys-sdk-anthropic
+   ```python
+   from anosys_sdk_openai import AnosysOpenAILogger
+   AnosysOpenAILogger()  # every OpenAI call from here on is traced
+   ```
 
-# JavaScript
-npm install anosys-sdk-anthropic @anthropic-ai/sdk
-```
+3. Open the [Console](https://console.anosys.ai) to see your traces.
 
-For agent workflows, use the Claude Agent SDK or OpenAI Agents SDK integration. For developer-tool activity, use the Claude Code, Codex CLI, or Antigravity integration. The [SDK README](https://github.com/Anosys-AI/anosys-sdk#readme) links to examples and complete setup instructions.
+The [SDK quickstart](https://github.com/Anosys-AI/anosys-sdk#quickstart) has the full example in Python and JavaScript.
 
-## Control sensitive telemetry
+## Integrations
 
-All integrations share collection levels: `off`, `metadata`, and `full`. Coding-tool hooks default to metadata only; collecting full content requires each user to accept the data collection policy. Application SDKs default to full collection, with developer controls to reduce or disable it. Project settings can lower collection but cannot override a user's more restrictive choice.
+| Integration | Example use cases |
+| --- | --- |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/openai-dark.svg"><img src="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/openai-light.svg" width="16" height="16" alt=""></picture> [OpenAI API](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/openai) | Latency and errors, tokens and cost per request, debugging bad answers |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/anthropic-dark.svg"><img src="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/anthropic-light.svg" width="16" height="16" alt=""></picture> [Anthropic API](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/anthropic) | Latency and errors, tokens and cost per request, debugging bad answers |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/openai-dark.svg"><img src="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/openai-light.svg" width="16" height="16" alt=""></picture> [OpenAI Agents SDK](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/openai_agents) | Agent runs and delegation, tool calls, finding the step that failed |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/claude-dark.svg"><img src="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/claude-light.svg" width="16" height="16" alt=""></picture> [Claude Agent SDK](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/claude_agents) | Agent runs and delegation, tool calls, finding the step that failed |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/claude-dark.svg"><img src="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/claude-light.svg" width="16" height="16" alt=""></picture> [Claude Code](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/claude_code) | Token and cost tracking per developer, project and session; expensive sessions and models |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/openai-dark.svg"><img src="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/openai-light.svg" width="16" height="16" alt=""></picture> [Codex CLI](https://github.com/Anosys-AI/anosys-sdk/tree/main/packages/python/codex) | Token and cost tracking per developer, project and session; expensive sessions and models |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/google-dark.svg"><img src="https://raw.githubusercontent.com/Anosys-AI/anosys-sdk/main/assets/logos/google-light.svg" width="16" height="16" alt=""></picture> [Antigravity](https://github.com/Anosys-AI/anosys-sdk/blob/main/ANTIGRAVITY.md) | Agent activity, tool calls and commands, session time |
 
-Every integration, including Antigravity, supports opt-in client-side encryption before transmission. The `enc2` format uses PBKDF2-SHA256 and deterministic AES-256-GCM with a workspace salt; metadata remains readable, and deterministic ciphertext allows grouping and joins while revealing equality between values. Browser decryption must support the same format, passphrase, and salt. Read the [SDK content-controls reference](https://github.com/Anosys-AI/anosys-sdk/blob/main/DATA_CONTROLS.md) and [upgrade notes](https://github.com/Anosys-AI/anosys-sdk/blob/main/RELEASE_NOTES.md) before rollout.
+Every integration is available for Python and JavaScript. Not using these? Send data with OpenTelemetry (OTLP/HTTP or the Collector), the REST API, JavaScript tracking, image pixels or file upload; [Integration options](https://console.anosys.ai/collect/integrationoptions) gives you the key for each.
 
-## Open-source repositories
+## Privacy by default
 
-- [anosys-sdk](https://github.com/Anosys-AI/anosys-sdk): current Python and JavaScript integrations, examples, and telemetry references.
-- [Demo application](https://github.com/Anosys-AI/AnoSys-Demo-Customer): an agentic real-estate application demonstrating Anosys.ai in a working product.
-- [anosys-logger-4-openai](https://github.com/Anosys-AI/anosys-logger-4-openai) and [anosys-logger-4-openai-agents](https://github.com/Anosys-AI/anosys-logger-4-openai-agents): earlier standalone integrations. Use anosys-sdk for new work.
+- **You choose what is sent:** `off`, `metadata` (ids, timing, models, tokens and cost) or `full` (prompts and responses too).
+- **Coding tools send metadata only** until each user opts in to full collection and accepts the [data collection policy](https://github.com/Anosys-AI/anosys-sdk/blob/main/PRIVACY.md).
+- **Projects can lower collection, never raise it**, and nothing overrides a user's choice to turn it down.
+- **Optional client-side encryption** of all content before it leaves your machine.
 
-## Resources
+Read more in [content controls](https://github.com/Anosys-AI/anosys-sdk/blob/main/DATA_CONTROLS.md).
 
-[Product](https://anosys.ai) · [Documentation](https://docs.anosys.ai) · [SDK](https://github.com/Anosys-AI/anosys-sdk) · [Console](https://console.anosys.ai) · [Support](mailto:support@anosys.ai)
+## Repositories
 
-Each repository has its own license. The official SDK uses the [Apache License 2.0](https://github.com/Anosys-AI/anosys-sdk/blob/main/LICENSE).
+- [anosys-sdk](https://github.com/Anosys-AI/anosys-sdk): Python and JavaScript integrations, example notebooks and reference docs.
+- [AnoSys-Demo-Customer](https://github.com/Anosys-AI/AnoSys-Demo-Customer): an agentic real-estate app that shows Anosys.ai in a working product.
+- [anosys-logger-4-openai](https://github.com/Anosys-AI/anosys-logger-4-openai) and [anosys-logger-4-openai-agents](https://github.com/Anosys-AI/anosys-logger-4-openai-agents): earlier standalone loggers, replaced by anosys-sdk. Use anosys-sdk for new work.
+
+Questions? Email [support@anosys.ai](mailto:support@anosys.ai). The SDK is licensed under [Apache 2.0](https://github.com/Anosys-AI/anosys-sdk/blob/main/LICENSE).
 
 <img src="https://api.anosys.ai/trafficpixel/925fb3f78b04d5b9d5aded56b44410c9/a/ea8a7985c8f3/anosys.gif?cvs198=https://github.com/Anosys-AI" width="1" height="1" alt=""/>
